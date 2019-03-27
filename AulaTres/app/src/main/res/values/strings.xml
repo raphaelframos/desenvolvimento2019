@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AulaTres</string>
+    <string name="title_activity_menu_bottom">MenuBottomActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragmento_noticias">Fragmento Noticias</string>
+    <string name="meu_nome">Raphael</string>
+    <string name="casa">House</string>
+    <string name="fragmento_perfil">Fragmento Perfil</string>
+</resources>
