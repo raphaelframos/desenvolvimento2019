@@ -3,6 +3,7 @@ package com.powellapps.meusdesejos.db;
 import com.powellapps.meusdesejos.model.Desejo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Singleton {
 
