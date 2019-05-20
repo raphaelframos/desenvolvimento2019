@@ -7,6 +7,7 @@
 
     <android.support.v7.widget.CardView
         app:cardUseCompatPadding="true"
+        android:elevation="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -22,13 +23,12 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 android:id="@+id/textView_nome_desejo"
-                android:text="Investimentos inteligentes - Gustavo Gerbasi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:textStyle="italic"
-                android:textSize="11sp"
+                android:textSize="7sp"
                 android:layout_marginRight="10dp"
                 android:gravity="right"
                 android:id="@+id/textView_data_desejo"

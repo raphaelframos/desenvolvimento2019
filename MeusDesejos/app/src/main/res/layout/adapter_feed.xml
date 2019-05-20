@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/imageView_foto_feed"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
@@ -39,7 +39,7 @@
 
                 <TextView
                     android:layout_marginLeft="5dp"
-                    android:textSize="15sp"
+                    android:textSize="10sp"
                     android:textStyle="bold"
                     android:gravity="right"
                     android:id="@+id/textView_data_desejo_feed"

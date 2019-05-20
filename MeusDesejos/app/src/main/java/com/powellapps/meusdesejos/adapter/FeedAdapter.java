@@ -33,7 +33,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder>{
         Desejo desejo = desejos.get(posicao);
         viewHolder.textViewNomeDoDesejo.setText(desejo.getNome());
         viewHolder.textViewNome.setText(desejo.getPerfil().getNome());
-        viewHolder.textViewData.setText(desejo.getData());
+        viewHolder.textViewData.setText(desejo.getDataFormatada());
         Picasso.get().load(desejo.getPerfil().getFoto()).transform(new CircleTransform()).into(viewHolder.imageViewFoto);
     }
 

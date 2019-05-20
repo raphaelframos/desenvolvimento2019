@@ -3,25 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragments.DesejoFragment">
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_margin="10dp"
+        android:padding="16dp"
+        android:id="@+id/floating_novo_desejo"
+        android:src="@drawable/ic_action_editar_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
+
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView_desejos"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
-        <android.support.design.widget.FloatingActionButton
-            android:layout_margin="10dp"
-            android:layout_gravity="right|bottom"
-            android:padding="16dp"
-            android:id="@+id/floating_novo_desejo"
-            android:src="@drawable/ic_action_editar_perfil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+
+
     </FrameLayout>
 
 

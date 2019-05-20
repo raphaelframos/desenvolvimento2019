@@ -10,11 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.powellapps.meusdesejos.EditarPerfilActivity;
 import com.powellapps.meusdesejos.R;
 import com.powellapps.meusdesejos.model.Perfil;
+import com.powellapps.meusdesejos.utils.CircleTransform;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -48,7 +50,7 @@ public class PerfilFragment extends Fragment {
         perfil.setFoto("https://pbs.twimg.com/profile_images/726252987/imagem_400x400.JPG");
 
         //Mostrando o modelo na tela
-        Picasso.get().load(perfil.getFoto()).into(imageViewFoto);
+        Picasso.get().load(perfil.getFoto()).transform(new CircleTransform()).into(imageViewFoto);
         textViewNome.setText(perfil.getNome());
         textViewDescricao.setText(perfil.getDescricao());
 
@@ -60,6 +62,8 @@ public class PerfilFragment extends Fragment {
                 startActivity(gustavoVacilao);
             }
         });
+
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.linearLayout_meus_desejos, FeedFragment.novaInstancia(true)).commit();
 
     }
 }

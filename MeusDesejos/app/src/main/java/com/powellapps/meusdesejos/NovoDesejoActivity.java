@@ -5,9 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.powellapps.meusdesejos.db.Singleton;
+import com.powellapps.meusdesejos.db.DesejoDAO;
 import com.powellapps.meusdesejos.model.Desejo;
 
 public class NovoDesejoActivity extends AppCompatActivity {
@@ -25,7 +24,9 @@ public class NovoDesejoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String nome = editTextNome.getText().toString();
                 Desejo desejo = new Desejo(nome);
-                Singleton.getInstance().add(desejo);
+
+                new DesejoDAO(getApplicationContext()).salvar(desejo);
+               // Singleton.getInstance().add(desejo);
                 finish();
             }
         });

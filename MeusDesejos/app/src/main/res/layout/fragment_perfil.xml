@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragments.PerfilFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <ImageView
@@ -34,18 +35,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="Descrição" />
+            android:text="Sou programador e guitarrista nas horas vagas. Também sou pai!" />
 
     </LinearLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floating_editar_perfil"
-        android:layout_margin="15dp"
-        android:layout_gravity="bottom|right"
-        android:src="@drawable/ic_action_editar_perfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <FrameLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/linearLayout_meus_desejos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floating_editar_perfil"
+            android:layout_margin="15dp"
+            android:layout_gravity="bottom|right"
+            android:src="@drawable/ic_action_editar_perfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
 
 
 
-</FrameLayout>
+
+
+</LinearLayout>
