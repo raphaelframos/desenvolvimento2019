@@ -8,4 +8,20 @@
     <string name="salvar">Salvar</string>
     <string name="descricao">Descrição</string>
     <string name="nome">Nome</string>
+    <string name="ativo">Ativo</string>
+    <string name="realizado">Realizado</string>
+    <string name="cancelado">Cancelado</string>
+    <string name="importante">Importante</string>
+    <string name="normal">Normal</string>
+
+    <string-array name="opcoes_prioridade">
+        <item>@string/normal</item>
+        <item>@string/importante</item>
+    </string-array>
+
+    <string-array name="opcoes_visibilidade_desejos">
+        <item >@string/ativo</item>
+        <item >@string/realizado</item>
+        <item >@string/cancelado</item>
+    </string-array>
 </resources>

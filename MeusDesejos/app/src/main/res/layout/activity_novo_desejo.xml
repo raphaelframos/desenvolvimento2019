@@ -13,18 +13,31 @@
         android:layout_height="wrap_content">
 
         <android.support.design.widget.TextInputEditText
+            android:inputType="textPersonName|textCapSentences"
             android:id="@+id/editText_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome" />
+            android:hint="@string/nome" />
 
     </android.support.design.widget.TextInputLayout>
 
+    <Spinner
+        android:id="@+id/spinner_estado"
+        android:layout_marginTop="15dp"
+        android:entries="@array/opcoes_visibilidade_desejos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Spinner>
+
+    <Spinner
+        android:id="@+id/spinner_prioridade"
+        android:layout_marginTop="15dp"
+        android:entries="@array/opcoes_prioridade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Spinner>
 
     <Button
+        style="@style/ButtonPattern"
         android:layout_marginTop="20dp"
         android:id="@+id/button_salvar"
-        android:text="Salvar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:text="@string/salvar" />
 </LinearLayout>

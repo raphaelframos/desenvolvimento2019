@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.powellapps.meusdesejos">
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    package="com.powellapps.myapplication">
 
     <application
         android:allowBackup="true"
@@ -11,12 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".NovoDesejoActivity" />
-        <activity android:name=".EditarPerfilActivity" />
-        <activity
-            android:name=".DesejosActivity"
-            android:label="@string/app_name">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

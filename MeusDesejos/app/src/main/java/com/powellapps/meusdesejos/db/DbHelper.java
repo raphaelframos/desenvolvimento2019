@@ -15,10 +15,13 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String DESEJO_DATA = "DATA";
     public static final String DESEJO_NOME = "NOME";
     public static final String DESEJO_ID_USUARIO = "ID_USUARIO";
+    public static final String DESEJO_PRIORIDADE = "PRIORIDADE";
+    public static final String DESEJO_ESTADO = "ESTADO";
 
     private static final String CRIAR_TABELA = "CREATE TABLE " +
             NOME_TABELA_DESEJO + "( " +
             DESEJO_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            DESEJO_PRIORIDADE + " INTEGER, " + DESEJO_ESTADO + " INTEGER, " +
             DESEJO_DATA + " LONG, " + DESEJO_NOME + " TEXT, " + DESEJO_ID_USUARIO + " INTEGER)";
 
 

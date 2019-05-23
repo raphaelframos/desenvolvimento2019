@@ -11,6 +11,8 @@ import java.util.Date;
 public class Desejo {
 
     private String nome;
+    private int prioridade;
+    private int estado;
     private Long data;
     private Integer idUsuario;
     private Perfil perfil;
@@ -22,6 +24,26 @@ public class Desejo {
         setNome(nome);
         Calendar dataDeHoje = Calendar.getInstance();
         setData(dataDeHoje.getTimeInMillis());
+    }
+
+    public int getPrioridade() {
+        return prioridade;
+    }
+
+    public void setPrioridade(int prioridade) {
+        this.prioridade = prioridade;
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+
+    public Integer getIdUsuario() {
+        return idUsuario;
     }
 
     public String getDataFormatada(){
@@ -60,6 +82,9 @@ public class Desejo {
         values.put(DbHelper.DESEJO_NOME, nome);
         values.put(DbHelper.DESEJO_DATA, data);
         values.put(DbHelper.DESEJO_ID_USUARIO, idUsuario);
+        values.put(DbHelper.DESEJO_ESTADO, estado);
+        values.put(DbHelper.DESEJO_PRIORIDADE, prioridade);
+
         return values;
     }
 
