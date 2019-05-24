@@ -1,5 +1,7 @@
 package com.powellapps.meusdesejos.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.powellapps.meusdesejos.DesejosActivity;
+import com.powellapps.meusdesejos.NovoDesejoActivity;
 import com.powellapps.meusdesejos.R;
 import com.powellapps.meusdesejos.model.Desejo;
 
@@ -17,10 +21,13 @@ import java.util.ArrayList;
 
 public class AdapterDesejos extends RecyclerView.Adapter<AdapterDesejos.ViewHolderDesejos>{
 
+    public static final String DESEJO = "desejo";
     ArrayList<Desejo> desejos = new ArrayList<>();
+    private Context context;
 
-    public AdapterDesejos(ArrayList<Desejo> desejos) {
+    public AdapterDesejos(ArrayList<Desejo> desejos, Context context) {
         this.desejos = desejos;
+        this.context = context;
     }
 
     @NonNull
@@ -32,7 +39,7 @@ public class AdapterDesejos extends RecyclerView.Adapter<AdapterDesejos.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolderDesejos viewHolderDesejos, int i) {
 
-        Desejo desejo = desejos.get(i);
+        final Desejo desejo = desejos.get(i);
 
         viewHolderDesejos.textViewNomeDesejo.setText(desejo.getNome());
         int tamanhoDoTexto = desejo.getNome().length();
@@ -48,6 +55,14 @@ public class AdapterDesejos extends RecyclerView.Adapter<AdapterDesejos.ViewHold
 
      //   viewHolderDesejos.itemView.setBackgroundColor(ContextCompat.getColor(viewHolderDesejos.get));
         viewHolderDesejos.textViewNomeDesejo.setTextSize(TypedValue.COMPLEX_UNIT_SP, tamanhoDaFonte);
+        viewHolderDesejos.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(context, NovoDesejoActivity.class);
+                it.putExtra(DESEJO, desejo);
+                context.startActivity(it);
+            }
+        });
     }
 
     @Override

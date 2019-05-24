@@ -4,11 +4,12 @@ import android.content.ContentValues;
 
 import com.powellapps.meusdesejos.db.DbHelper;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Desejo {
+public class Desejo implements Serializable {
 
     private String nome;
     private int prioridade;

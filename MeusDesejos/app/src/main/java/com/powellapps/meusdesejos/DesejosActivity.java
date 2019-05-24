@@ -32,7 +32,7 @@ public class DesejosActivity extends AppCompatActivity {
 
         RecyclerView recyclerViewDesejos = findViewById(R.id.recyclerView_desejos);
         recyclerViewDesejos.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        adapter = new AdapterDesejos(new ArrayList<Desejo>());
+        adapter = new AdapterDesejos(new ArrayList<Desejo>(), this);
         recyclerViewDesejos.setAdapter(adapter);
 
         tabLayoutDesejos = findViewById(R.id.tab_desejos);

@@ -16,7 +16,11 @@ public class DesejoDAO extends DbHelper{
     }
 
     public void salvar(Desejo desejo) {
-        getWritableDatabase().insert(NOME_TABELA_DESEJO, null, desejo.getValues());
+        if(desejo.getId() == null){
+            getWritableDatabase().insert(NOME_TABELA_DESEJO, null, desejo.getValues());
+        }else{
+            getWritableDatabase().update(NOME_TABELA_DESEJO, desejo.getValues(), "ID = ?", new String[] {desejo.getId().toString()});
+        }
     }
 
     public ArrayList<Desejo> retornaLista() {

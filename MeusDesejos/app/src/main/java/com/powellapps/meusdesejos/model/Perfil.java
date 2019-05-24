@@ -1,6 +1,8 @@
 package com.powellapps.meusdesejos.model;
 
-public class Perfil {
+import java.io.Serializable;
+
+public class Perfil implements Serializable {
 
     private String nome;
     private String descricao;

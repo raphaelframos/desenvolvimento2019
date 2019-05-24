@@ -7,10 +7,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.powellapps.meusdesejos.adapter.AdapterDesejos;
 import com.powellapps.meusdesejos.db.DesejoDAO;
 import com.powellapps.meusdesejos.model.Desejo;
 
 public class NovoDesejoActivity extends AppCompatActivity {
+
+    private Desejo desejo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +29,7 @@ public class NovoDesejoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nome = editTextNome.getText().toString();
-                Desejo desejo = new Desejo(nome);
+                desejo.setNome(nome);
                 desejo.setPrioridade(spinnerPrioridade.getSelectedItemPosition());
                 desejo.setEstado(spinnerEstado.getSelectedItemPosition());
                 new DesejoDAO(getApplicationContext()).salvar(desejo);
@@ -34,5 +37,19 @@ public class NovoDesejoActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        desejo = (Desejo) getIntent().getSerializableExtra(AdapterDesejos.DESEJO);
+        try{
+            if(desejo == null){
+                desejo = new Desejo();
+            }else{
+                editTextNome.setText(desejo.getNome());
+                spinnerEstado.setSelection(desejo.getEstado());
+                spinnerPrioridade.setSelection(desejo.getPrioridade());
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 }
