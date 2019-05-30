@@ -8,6 +8,8 @@ import com.powellapps.meusdesejos.model.Desejo;
 import com.powellapps.meusdesejos.model.Perfil;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class DesejoDAO extends DbHelper{
 
@@ -59,6 +61,8 @@ public class DesejoDAO extends DbHelper{
         while (cursor.moveToNext()){
             desejos.add(montaDesejo(cursor));
         }
+
+        Collections.reverse(desejos);
         return desejos;
     }
 
@@ -76,5 +80,9 @@ public class DesejoDAO extends DbHelper{
 
     public ArrayList<Desejo> retornaLista(int position) {
         return retornaDesejos(position);
+    }
+
+    public void remove(Integer id) {
+        getWritableDatabase().delete(NOME_TABELA_DESEJO, DESEJO_ID + "= ?", new String[] {id.toString()});
     }
 }

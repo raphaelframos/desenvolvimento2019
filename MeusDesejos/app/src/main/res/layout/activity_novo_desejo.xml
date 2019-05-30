@@ -15,6 +15,7 @@
         tools:context=".NovoDesejoActivity">
 
         <TextView
+            android:id="@+id/textView_mensagem_novo_desejo"
             android:textSize="20sp"
             android:gravity="center_horizontal"
             android:text="Adicione seu desejo!"

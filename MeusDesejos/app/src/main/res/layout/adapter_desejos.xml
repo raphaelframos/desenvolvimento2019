@@ -7,14 +7,16 @@
     android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cardView_fundo"
         app:cardCornerRadius="1dp"
+        android:elevation="10dp"
         app:cardBackgroundColor="@color/cor_importante"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardUseCompatPadding="true">
 
         <TextView
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorAccent"
             android:layout_margin="10dp"
             android:layout_gravity="center"
             android:textSize="25sp"

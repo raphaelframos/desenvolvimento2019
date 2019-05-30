@@ -4,15 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.powellapps.meusdesejos.DesejosActivity;
 import com.powellapps.meusdesejos.NovoDesejoActivity;
 import com.powellapps.meusdesejos.R;
 import com.powellapps.meusdesejos.model.Desejo;
@@ -53,7 +52,13 @@ public class AdapterDesejos extends RecyclerView.Adapter<AdapterDesejos.ViewHold
             tamanhoDaFonte = 24f;
         }
 
-     //   viewHolderDesejos.itemView.setBackgroundColor(ContextCompat.getColor(viewHolderDesejos.get));
+        int cor = R.color.cor_normal;
+        if(desejo.getPrioridade() == 1){
+            cor = R.color.cor_importante;
+        }
+
+        viewHolderDesejos.cardViewFundo.setCardBackgroundColor(ContextCompat.getColor(context, cor));
+
         viewHolderDesejos.textViewNomeDesejo.setTextSize(TypedValue.COMPLEX_UNIT_SP, tamanhoDaFonte);
         viewHolderDesejos.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,12 +83,14 @@ public class AdapterDesejos extends RecyclerView.Adapter<AdapterDesejos.ViewHold
 
     class ViewHolderDesejos extends RecyclerView.ViewHolder {
 
+        private CardView cardViewFundo;
         private TextView textViewNomeDesejo;
 
         public ViewHolderDesejos(@NonNull View itemView) {
             super(itemView);
 
             textViewNomeDesejo = itemView.findViewById(R.id.textView_nome_desejo);
+            cardViewFundo = itemView.findViewById(R.id.cardView_fundo);
         }
     }
 }
